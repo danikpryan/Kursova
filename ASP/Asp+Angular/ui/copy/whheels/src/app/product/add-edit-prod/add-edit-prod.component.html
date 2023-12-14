@@ -1,0 +1,68 @@
+<div class="container">
+    
+    
+
+
+    <label><b>Назва</b></label>
+    <div>
+        <input type="text" class="form-control" [(ngModel)]="Name" placeholder="Введіть назву">
+    </div>
+         
+    <label><b>Опис</b></label>
+    <input type="text" placeholder="Введіть опис" [(ngModel)]="Descrit">
+
+    <label><b>Ціна</b></label>
+    <input type="text" placeholder="Введіть ціну" [(ngModel)]="Price">
+
+    <label><b>Код</b></label>
+    <select aria-placeholder="Код" [(ngModel)]="Size">
+        
+        <option>M</option>
+        
+    </select>
+    
+    <p></p>
+    <p></p>
+
+    <label><b>Колір</b></label>
+    <input type="text" placeholder="Колір" [(ngModel)]="Color">
+
+    <label><b>Кількість</b></label>
+    <input type="text" placeholder="Кількість" [(ngModel)]="Value">
+
+
+
+    <label><b>Категорія</b></label>
+    <select [(ngModel)]="categoryId">
+        <option value="1">Ліжка</option>
+        <option value="2">Дивани</option>
+        <option value="3">Шафи</option>
+        <option value="4">Столи</option>
+    </select>
+
+    <p></p>
+
+    <div class="ml-3 bd-highlight" style="width: 40%;">
+        <img [src]="PhotoFilePath" height="250px;" width="200px;">
+        <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+        </div>
+    <div class="ml-3 bd-highlight" style="width: 40%;">
+        <img [src]="PhotoFilePath2" height="250px;" width="200px;">
+        <input type="file" (change)="uploadPhoto2($event)" class="mt-2"/>
+    </div>
+
+    <label><b>Відображати на головній сторінці?</b></label>  
+    <input type="checkbox" [(ngModel)]="isFavorite">
+    
+</div>
+
+    <hr>
+
+    <button type="submit" (click)="addProduct()" *ngIf="prod.ProductId == 0" id="btn-add">
+        Add
+    </button>
+    <button (click)="updateProduct()" *ngIf="prod.ProductId!=0" id="btn-add">
+        Update
+    </button>
+
+ 

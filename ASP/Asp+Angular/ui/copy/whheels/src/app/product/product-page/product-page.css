@@ -1,0 +1,53 @@
+.leftimg {
+    float:left; /* Выравнивание по левому краю */
+    margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+   }
+
+   .LilImage{
+       width:63px;
+       height: 65px;
+   }
+
+   .product__swatches {
+    display: inline;
+}
+
+.sizes{
+    display: inline;
+    cursor: pointer;
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+}
+
+.anotherPhotos{
+    width:63px;
+    height: 65px;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+#btn-add{
+    text-align: center;
+    cursor: pointer;
+    background-color:#FFA500; /* Green */
+    border: none;
+    border-radius: 4px;
+    color: rgb(5, 5, 5);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 2.5%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    padding: 10px;
+}
+
+#btn-add:hover {
+    background-color:#000000; /* Green */
+    color:#FFA500;
+}

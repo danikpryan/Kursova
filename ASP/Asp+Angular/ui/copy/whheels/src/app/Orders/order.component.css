@@ -1,0 +1,138 @@
+*{
+    margin-left: 2.5%;
+  }
+
+  a{
+      text-decoration: none;
+  }
+  
+  #btn-add{
+      text-align: center;
+      cursor: pointer;
+      background-color:#FFA500; /* Green */
+      border: none;
+      border-radius: 4px;
+      color: rgb(5, 5, 5);
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-left: 2.5%;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      padding: 10px;
+  }
+  
+  #btn-add:hover {
+      background-color:#000000; /* Green */
+      color:#FFA500;
+  }
+  
+  table {
+      margin-left: 20px;
+      margin: auto;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      background: white;
+      max-width: 70%;
+      width: 70%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      font-weight: normal;
+      color: #039;
+      border-bottom: 2px solid #6678b1;
+      padding: 10px 8px;
+    }
+    td {
+      border-bottom: 1px solid #ccc;
+      color: #669;
+      padding: 9px 8px;
+      transition: .3s linear;
+    }
+    tr:hover td {
+      background: #e8edff;
+    }
+  
+    .btnTbl{
+      width:45%;
+      background-color:#FFA500; /* Green */
+      border: none;
+      border-radius: 4px;
+      color: rgb(0, 0, 0);
+      padding: 15px 32px;
+      margin-right: 2px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+  
+    .btnTbl:hover{
+        background-color: #000000;
+        color: #e4d7be;
+    }
+  
+    .option-input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      position: relative;
+      top: 13.33333px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      width: 40px;
+      transition: all 0.15s ease-out 0s;
+      background: #cbd1d8;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 0.5rem;
+      outline: none;
+      position: relative;
+      z-index: 1000;
+    }
+    .option-input:hover {
+      background: #9faab7;
+    }
+    .option-input:checked {
+      background: #40e0d0;
+    }
+    .option-input:checked::before {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      content: '✔';
+      display: inline-block;
+      font-size: 26.66667px;
+      text-align: center;
+      line-height: 40px;
+    }
+    .option-input:checked::after {
+      -webkit-animation: click-wave 0.65s;
+      -moz-animation: click-wave 0.65s;
+      animation: click-wave 0.65s;
+      background: #40e0d0;
+      content: '';
+      display: block;
+      position: relative;
+      z-index: 100;
+    }
+    .option-input.radio {
+      border-radius: 50%;
+    }
+    .option-input.radio::after {
+      border-radius: 50%;
+    }
+  
+    .centerr{
+      text-align: center;
+    }

@@ -1,0 +1,54 @@
+import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import {SharedService} from 'src/app/shared.service';
+import { filter} from 'rxjs/operators';
+
+
+@Component({
+  selector: 'app-show-prod',
+  templateUrl: './show-prod.component.html',
+  styleUrls: ['./show-prod.component.css']
+})
+export class ShowProdComponent implements OnInit {
+
+  constructor(private service:SharedService) { 
+    this.service = service;
+  }
+
+   prod:any;
+   PhotoFilePath:string;
+
+  bodyText:string;
+  ProductList:any=[];
+  categoryN:number;
+
+  ActivateProdPage:boolean = false;
+  mainWords:string;
+  ModalTitle:string;
+  ProductListWithoutFilter:any=[];
+
+  ngOnInit(): void {
+    this.refreshProductList();
+    this.bodyText = "Этот текст можно обновить";
+    this.categoryN = 0;
+  }
+
+  refreshProductList(){
+    this.service.getProdlist().subscribe(data=>{
+      this.ProductList = data;
+
+      this.PhotoFilePath=this.service.PhotoUrl+this.prod.img;
+    });
+  }
+
+  openModal(item){
+    this.prod=item;
+    this.ModalTitle="Детальніше";
+    this.ActivateProdPage=true;
+  }
+
+  closeModal( ) {
+    this.ActivateProdPage=false;
+    this.refreshProductList();
+  }
+}

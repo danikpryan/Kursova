@@ -1,0 +1,26 @@
+﻿@model Wall.Domain.Entities.Product
+
+
+<div class="left">
+    <img src="@Model.img" />
+</div>
+<div>
+    <h1>@Model.name</h1>
+    <div>
+        <p>
+            <strong>Розмір:</strong>
+            @Model.size
+            <br />
+            <strong>Матеріал:</strong>
+            @Model.material
+            <br />
+            @Html.Raw(Model.desc);
+            <br />
+            <h4><strong>Ціна:</strong></h4>
+            @Model.price
+        </p>
+    </div>
+</div>
+<div>
+    <p><a class="btn btn-warning" asp-controller="DeliveryCart" asp-action="addToCart" asp-route-id="@Model.id">Додати до кошика</a></p>
+</div>

@@ -1,0 +1,7 @@
+﻿<h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-4">
+    @{
+        foreach (Product product in Model.getAllProducts)
+            @Html.Partial("AllProducts", product)
+    }
+</div>

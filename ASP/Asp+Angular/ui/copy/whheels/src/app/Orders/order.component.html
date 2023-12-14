@@ -1,0 +1,94 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <button type="button" class="close" 
+        data-dismiss="modal" aria-label="Close"
+        (click)="closeModal()" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <detail [prod]="prod" *ngIf="ActivateAddEditDepComp">
+          </detail>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg mt-5 mb-3">
+
+  <span class="navbar-brand">Категорії:</span>
+
+  <button class="navbar-toggler" type="button"
+    data-toggle="collapse" data-target="#nextNav"
+    aria-expanded="false" aria-controls="nextNav"  aria-label="Toggle Navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <!-- <div class="collapse navbar-collapse" id="nextNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active coursor">Всі</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link coursor">Футболки</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link coursor">Куртки</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link coursor">Кофти</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link coursor">Штани</a>
+      </li>
+    </ul>
+
+   </div>  
+  <div>
+    <input type="checkbox" [(ngModel)]="isFavorite">
+  </div> -->
+  <a type="button" class="btn-primary waves-light ml-5" routerLink="/admin">Товари</a>
+
+</nav>
+
+<div>
+    <table>
+        <thead>
+             <tr>
+                 <th>ПІБ</th>
+                 <th>Місто</th>
+                 <th>Адреса</th>
+                 <th>Індекс</th>
+                 <th>Номер телефону</th>
+                 <th>Доставлено</th>
+                 <th>Налаштування</th>
+             </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor = "let dataItem of OrderList">
+                <td>{{dataItem.Name}}</td>
+                <td>{{dataItem.City}}</td>
+                <td>{{dataItem.Address}}</td>
+                <td>{{dataItem.Zip}}</td>
+                <td>{{dataItem.Phone}}</td>
+                <td *ngIf="dataItem.Shipped==false">Не відправлено</td>
+                <td *ngIf="dataItem.Shipped==true">Відправлено</td>
+                <td>
+                 <button type="button" class="btn btn-light mr-1"
+                 data-toggle="modal" data-target="#exampleModal"
+ (click)="detailClick(dataItem)"
+ data-backdrop="static" data-keyboard="false"
+                 >
+                 Детальніше
+                 </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+ </div>

@@ -1,0 +1,13 @@
+﻿@model Product
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<main>
+    <div class="content">
+        <div id="post">
+            <a class="btn btn-warning" asp-controller="Home" asp-action="Show" asp-route-id="@Model.id"><img src="@Model.img" /></a>
+            <div class="holder">
+                @Model.name
+                <p>@Model.price.ToString("c")</p>
+            </div>
+        </div>
+    </div>
+</main>

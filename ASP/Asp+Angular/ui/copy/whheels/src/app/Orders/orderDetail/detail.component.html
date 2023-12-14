@@ -1,0 +1,27 @@
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Назва</th>
+            <th scope="col">Колір</th>
+            <th scope="col">Ціна</th>
+            <th scope="col">Розмір</th>
+            <th scope="col">Кількість у замовленні</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let dataItem of ProductList;">
+            <td>{{dataItem?.Name}}  </td>
+                <td>{{dataItem?.Color}}  </td>
+                <td>{{dataItem?.Price}}  </td>
+                <td>{{dataItem?.Size}}  </td>
+                <td *ngFor = "let dataItem of detailList">
+                    {{dataItem?.price}}
+                </td>
+          </tr>
+          </tbody>
+      </table>
+
+    <hr>
+    <button type="button" class="btn btn-light mr-1" (click)="updte(prod.Id)">Відправлено</button>
+ </div> 

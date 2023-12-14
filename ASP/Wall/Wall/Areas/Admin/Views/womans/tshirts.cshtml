@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+@{
+    string strTitle = "Редагувати товар";
+    ViewBag.Title = strTitle;
+}
+
+<div>
+    <h2>@strTitle</h2>
+    <div class="div-box">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Edit" asp-route-id="">Добавить товар</a>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div>
+            @foreach (Product entity in Model)
+            {
+                <div>
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Edit" asp-route-id="@entity.id">Редагувати</a>
+                    <form style="display: inline-block;" id="form-@entity.id" asp-area="Admin" asp-controller="mens" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@entity.id" />
+                        <a href="#" onclick="document.getElementById('form-@entity.id').submit();">Видалити</a>
+                    </form>
+                    <a asp-area="" asp-controller="Shop" asp-action="Show" asp-route-id="@entity.id">
+                        @($"{ entity.name}")
+                    </a>
+
+                </div>
+
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,84 @@
+﻿@model Wall.Domain.Entities.Product
+@{
+    string strTitle = "Редактировать запись";
+    ViewBag.Title = strTitle;
+}
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        <form asp-area="Admin" asp-controller="Home" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="id" />
+            <input type="hidden" asp-for="img" />
+
+            <div asp-validation-summary="All"></div>
+            <div class="div-box">
+                <label asp-for="name"></label>
+                <input asp-for="name" />
+                <span asp-validation-for="name"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="desc"></label>
+                <input asp-for="desc" />
+                <span asp-validation-for="desc"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="color"></label>
+                <input asp-for="color" />
+                <span asp-validation-for="color"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="img"></label>
+                <input type="file" name="mainImage" id="mainImage" />
+                <div>
+                    <img class="img-block" src="@Model.img" />
+                </div>
+            </div>
+            <div>
+                <label asp-for="size"></label>
+                <input asp-for="size" />
+                <span asp-validation-for="size"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="price"></label>
+                <input asp-for="price" />
+                <span asp-validation-for="price"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="sex"></label>
+                <input asp-for="sex" />
+                <span asp-validation-for="sex"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="categoryId"></label>
+                <input asp-for="categoryId" />
+                <span asp-validation-for="categoryId"></span>
+            </div>
+            <!--<div>
+                <label asp-for="MetaTitle"></label>
+                <input asp-for="MetaTitle" />
+                <span asp-validation-for="MetaTitle"></span>
+            </div>
+            <div>
+                <label asp-for="MetaDescriptions"></label>
+                <input asp-for="MetaDescriptions" />
+                <span asp-validation-for="MetaDescriptions"></span>
+            </div>
+            <div>
+                <label asp-for="MetaKeywords"></label>
+                <input asp-for="MetaKeywords" />
+                <span asp-validation-for="MetaKeywords"></span>
+            </div>-->
+            <input type="submit" value="Сохранить" />
+        </form>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+        var newCKEdit = CKEDITOR.replace('@Html.IdFor(x=>x.desc)');
+        newCKEdit.updateElement();
+    }
+</script>

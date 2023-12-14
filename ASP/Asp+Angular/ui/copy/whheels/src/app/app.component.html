@@ -1,0 +1,83 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+        <a class="btn btn-primary waves-light" routerLink="">
+            <strong class="blue-text">Wheels</strong>
+        </a>
+        <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#navbarContent"
+        aria-expanded="false" aria-controls="navbarContent"  aria-label="Toggle Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a routerLink="" class="nav-link waves-effect">Головна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" routerLink="product">Товари</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" routerLink="/cart">
+                        <cart-summary></cart-summary>
+                        <!--<span class="badge badge-danger z-depth-1 mr-1">4</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="clearfix d-none d-sm-inline-block">Кошик</span>-->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link waves-effect">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link waves-effect">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>    
+</nav> 
+
+
+<div class="mclear"><br /></div>
+        <router-outlet></router-outlet>
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <div class="pt-4">
+        <a href="" role="button" class="btn btn-outline-white ml-2">Wheels <i class="fa fa-cog"></i></a>
+        <a routerLink="admin" role="button" class="btn btn-outline-white ml-2">Увійти <i class="fa fa-user-shield"></i></a>
+    </div>
+    <hr class="my-4">
+    <div class="pb-4">
+        <a href="">
+            <i class="fab fa-facebook mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-instagram mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-github mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-twitter mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-youtube mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-pinterest mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-vk mr-3"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-google-plus mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">
+        Wheels Shop
+    </div>
+</footer>

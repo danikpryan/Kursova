@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <title></title>
+</head>
+<body>
+    <div id="page-wrap">
+        @await Html.PartialAsync("HeaderPartial")
+        <div class="clear"><br /></div>
+            @RenderBody();
+    </div>
+    <footer>
+       @await Html.PartialAsync("FooterPartial")
+    </footer>
+</body>
+</html>

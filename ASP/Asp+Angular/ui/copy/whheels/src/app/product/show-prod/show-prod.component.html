@@ -1,0 +1,112 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <button type="button" class="close" 
+        data-dismiss="modal" aria-label="Close"
+        (click)="closeModal('Товар додано до кошика')" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <prod-page [prod]="prod" *ngIf="ActivateProdPage">
+          </prod-page>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<main>
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg mt-5 mb-3">
+
+      <span class="navbar-brand">Категорії:</span>
+
+      <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#nextNav"
+        aria-expanded="false" aria-controls="nextNav"  aria-label="Toggle Navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="nextNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active coursor" (click)="refreshProductList()">Всі</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link coursor" (click)="getByCategory(1)">Ліжка</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link coursor" (click)="getByCategory(2)">Дивани</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link coursor" (click)="getByCategory(3)">Шафи</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link coursor"(click)="getByCategory(4)" >Столи</a>
+          </li>
+        </ul>
+
+        <!-- <form class="form-inline">
+          <div class="md-form my-0">
+           <input [(ngModel)]="ProductNameFilter"
+            (keyup)="filterFn()" class="form-control mr-sm-2" placeholder="Пошук" aria-label="Пошук">
+          </div>
+        </form> -->
+
+      </div>        
+    </nav>
+
+    <div class="sright">
+      <h4>Знайти товар</h4>
+      <input [(ngModel)]="ProductNameFilter"
+      (keyup)="filterFn()" placeholder="Filter">
+    </div>
+
+    <section class="text-center mb-4">
+      <div class="row wow fadeIn" >
+        <div class="col-lg-3 col-md-6 md-4" *ngFor = "let item of ProductList">
+            <div class="card coursor"data-toggle="modal" data-target="#exampleModal"
+            (click)="openModal(item, 'Детальныше')"
+            data-backdrop="static" data-keyboard="false"
+            >
+              <div class="view overlay">
+                <img class="card-img-top" [src]=PhotoFilePath+item.img alt="golf">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <div class="card-body text-center">
+                <a  class="grey-text">
+                  <h5>Golf</h5>
+                </a>
+                <h5>
+                  <strong>  
+                    <a class="dark-grey-text"> {{item.Name}}
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-bold blue-text">
+                  <strong>{{item.Price}} грн</strong>
+                </h4>
+
+                
+
+              </div>
+                
+            </div>
+            
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>

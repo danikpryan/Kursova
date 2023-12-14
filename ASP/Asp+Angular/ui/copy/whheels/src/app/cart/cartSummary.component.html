@@ -1,0 +1,10 @@
+<div class="pull-xs-right">
+    <small>
+        <span class="badge badge-danger z-depth-1 mr-1">{{ cart.itemCount }} </span>
+    </small>
+    <button class="btn btn-sm bg-inverse" [disabled]="cart.itemCount == 0"
+    routerLink="/cart">
+    <i class="fa fa-shopping-cart"></i>
+    </button>
+   </div>
+   

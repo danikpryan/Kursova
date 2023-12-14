@@ -1,0 +1,152 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+        <button type="button" class="close" 
+        data-dismiss="modal" aria-label="Close"
+        (click)="closeModal('Товар додано до кошика')" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <prod-page [prod]="prod" *ngIf="ActivateProdPage">
+          </prod-page>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="carousel-ex" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+  <ol class="carousel-indicators">
+      <li class="active" data-target="#carousel-ex" data-slide-to="0"></li>
+      <li data-target="#carousel-ex" data-slide-to="1"></li>
+      <li data-target="#carousel-ex" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+          <div class="view" style="background-image: url(https://static.wixstatic.com/media/2eeb6d_51d194bc58ad409cb10a739ad18b936c~mv2.jpg/v1/fill/w_1200,h_1200,al_c,q_85/2eeb6d_51d194bc58ad409cb10a739ad18b936c~mv2.jpg);
+          background-repeat: no-repeat; background-size: cover;">
+          <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+              <div class="text-center white-text mx-5 wow fadeIn">
+                  <h1 class="mb-4">
+                      <strong></strong>
+                  </h1>
+                  <p>
+                      <strong></strong>
+                  </p>
+
+                  <p class="mb-4 d-none d-mb-block">
+                      <strong></strong>
+                  </p>
+                  <a href="" class="btn btn-outline-white btn-lg">
+                       <i class="fa fa-gradiation-cap ml-2"></i>
+                  </a>
+              </div>
+          </div>    
+      </div>
+      </div>
+      <div class="carousel-item ">
+        <div class="view" style="background-image: url(https://www.ambientha.com/wp-content/uploads/2020/11/idee-carta-da-parati-soggiorno-broken-ocean-ambientha-1024x682.jpg);
+        background-repeat: no-repeat; background-size: cover;">
+        <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+            <div class="text-center white-text mx-5 wow fadeIn">
+                <h1 class="mb-4">
+                    <strong></strong>
+                </h1>
+                <p>
+                    <strong></strong>
+                </p>
+
+                <p class="mb-4 d-none d-mb-block">
+                    <strong></strong>
+                </p>
+                <a href="" class="btn btn-outline-white btn-lg">
+                     <i class="fa fa-gradiation-cap ml-2"></i>
+                </a>
+            </div>
+        </div>    
+    </div>
+    </div>
+    <div class="carousel-item ">
+      <div class="view" style="background-image: url(https://cdn.mos.cms.futurecdn.net/CbqHXxq4LThQJMTC2Hs2Wo.jpg);
+      background-repeat: no-repeat; background-size: cover;">
+      <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+          <div class="text-center white-text mx-5 wow fadeIn">
+              <h1 class="mb-4">
+                  <strong></strong>
+              </h1>
+              <p>
+                  <strong></strong>
+              </p>
+
+              <p class="mb-4 d-none d-mb-block">
+                  <strong></strong>
+              </p>
+              <a href="" class="btn btn-outline-white btn-lg">
+                  <i class="fa fa-gradiation-cap ml-2"></i>
+              </a>
+          </div>
+      </div>    
+  </div>
+  </div>
+  </div>
+<!--Изза двух стилей две стрелки поэтому нафиг стрелки-->
+  <!--<a href="#carousel-ex" class="carousel-control-prev" role="button" data-slide="prev">
+    <span  aria-hidden="true"></span>
+  </a>
+  <a href="#carousel-ex" class="carousel-control-next" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>-->  
+</div>
+
+<main>
+  <div class="container">
+
+    <section class="text-center mb-4">
+      <div class="row wow fadeIn" >
+        <div class="col-lg-3 col-md-6 md-4" *ngFor = "let item of FavoriteProducts">
+            <div class="card coursor"data-toggle="modal" data-target="#exampleModal"
+            (click)="openModal(item)"
+            data-backdrop="static" data-keyboard="false"
+            >
+              <div class="view overlay">
+                <img class="card-img-top" [src]=PhotoFilePath+item.img alt="golf">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+
+              <div class="card-body text-center">
+                <a  class="grey-text">
+                  <h5>Golf</h5>
+                </a>
+                <h5>
+                  <strong>  
+                    <a class="dark-grey-text"> {{item.Name}}
+                      <span class="badge badge-pill badge-danger">Краще</span>
+                    </a>
+                  </strong>
+                </h5>
+
+                <h4 class="font-weight-bold blue-text">
+                  <strong>{{item.Price}} грн</strong>
+                </h4>
+
+                
+
+              </div>
+                
+            </div>
+            
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+

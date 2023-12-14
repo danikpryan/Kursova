@@ -1,0 +1,82 @@
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+        <div class="row wow fadeIn">
+            <div class="col-md-6 mb-4">
+                <img [src]=MainPhoto alt=prod.Name class="img-fluid">
+                <div class="center" *ngIf="prod.img2!=''" >
+                    <img class="anotherPhotos coursor" [src]=PhotoFilePath (click)="changePhoto(1)">
+                    <img class="anotherPhotos coursor" [src]=PhotoFilePath2 (click)="changePhoto(2)">
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4">
+                    <p class="lead">
+                        <span>
+                            <h2>{{prod.Name}}</h2>
+                        </span>
+                    </p>
+                    <p class="lead font-weight-bold">Колір: {{prod.Color}}</p>
+                    
+                    <p class="lead font-weight-bold">Опис: {{prod.Descrit}}</p>
+                    
+                    
+
+                    <b class="lead font-weight-bold">Інші коди:</b>
+                        <div class="sizes" *ngFor="let item of SizeList">
+                            <a (click)="changeSize(item)">{{item.Size}}</a>
+                        </div>
+                    
+                    <p class="lead font-weight-bold">Кольори:</p>
+                    <div  class="product__swatches" *ngFor="let dataItem of AnotherProductsList">
+                        <a class="coursor" (click)="Change(dataItem)"><img class="LilImage" [src]=PhotoFilePath1+dataItem.img></a>
+                   </div>
+                   <div>
+                    <h2>{{prod.Price}} грн</h2>
+                    
+                    
+                    </div >
+                    <div *ngIf="prod.Value==0; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>Немає в наявності</ng-template>
+                    <ng-template #elseBlock>
+                        <form action="" class="d-flex justify-content-left">
+                            <button type="submit" class="btn btn-primary btn-md my-0 p" (click)="addProductToCart(prod)">
+                                До кошика <i class="fa fa-shopping-cart ml-1"></i>
+                            </button>
+                        </form>
+                    </ng-template>
+                        
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--<div>
+    <div class="leftimg">
+        <img [src]=MainPhoto>
+        
+        <div class="center" *ngIf="prod.img2!=''" >
+            <img class="anotherPhotos" [src]=PhotoFilePath (click)="changePhoto(1)">
+            <img class="anotherPhotos" [src]=PhotoFilePath2 (click)="changePhoto(2)">
+        </div>
+    </div>
+        </div>
+        Кольори:
+        <div  class="product__swatches" *ngFor="let dataItem of AnotherProductsList">
+            <a (click)="Change(dataItem)"><img class="LilImage" [src]=PhotoFilePath1+dataItem.img></a>
+        </div>
+        <div>
+            <h2>{{prod.Price}} грн</h2>
+            <div *ngIf="prod.Value==0; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>Немає в наявності</ng-template>
+            <ng-template #elseBlock> <button type="button" (click)="addProductToCart(prod)" id="btn-add" >До кошика</button></ng-template>
+            
+           
+        </div>
+
+
+    </div>
+</div>-->
+

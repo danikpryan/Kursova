@@ -1,0 +1,59 @@
+<div class="navbar navbar-inverse bg-inverse">
+   </div>
+   <div class="m-a-1">
+    <h2 class="text-xs-center">Ваш кошик</h2>
+    <table class="table table-bordered table-striped p-a-1">
+    <thead>
+    <tr>
+    <th>Кількість</th>
+    <th>Товар</th>
+    <th class="text-xs-right">Ціна</th>
+    <th class="text-xs-right">Всього</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngIf="cart.lines.length == 0">
+    <td colspan="4" class="text-xs-center">
+    Ваш кошик пустий
+    </td>
+    </tr>
+    <tr *ngFor="let line of cart.lines">
+    <td>
+    <input type="number" class="form-control-sm"
+    style="width:5em"
+    [value]="line.quantity"
+    (change)="cart.updateQuantity(line.product,
+    $event.target.value)"/>
+    </td>
+    <td>{{line.product.Name}}</td>
+    <td class="text-xs-right">
+    {{line.product.Price}} грн
+    </td>
+    <td class="text-xs-right">
+    {{(line.lineTotal)}} грн
+    </td>
+    <td class="text-xs-center">
+    <button class="btn btn-sm btn-danger"
+    (click)="cart.removeLine(line.product.id)">
+    Видалити
+    </button>
+    </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+    <td colspan="3" class="text-xs-right">Всього:</td>
+    <td class="text-xs-right">
+    {{cart.cartPrice}} грн
+    </td>
+    </tr>
+    </tfoot>
+    </table>
+   </div>
+   <div class="text-xs-center">
+    <button class="btn btn-primary" routerLink="/product">Продовжити покупки</button>
+    <button class="btn btn-secondary" routerLink="/checkout"
+    [disabled]="cart.lines.length == 0">
+    Замовити
+    </button>
+   </div>

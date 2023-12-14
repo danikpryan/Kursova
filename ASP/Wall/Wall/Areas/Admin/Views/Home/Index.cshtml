@@ -1,0 +1,31 @@
+﻿@model IQueryable<Product>
+@{
+    string strTitle = "Панель администратора";
+    ViewBag.Title = strTitle;
+}
+
+    <main>
+        <div class="content">
+            <div id="post">
+                <a asp-area="Admin" asp-controller="Hpme" asp-action="ChooseGender" asp-route-category=""><img src="~/img/ico/products.png" /></a>
+                <div class="holder">
+                    <a class="gl" asp-area="Admin" asp-controller="Home" asp-action="chooseProduct">Товари</a>
+                </div>
+            </div>
+            <div id="post">
+                <a asp-area="Admin" asp-controller="Home" asp-action="orders"><img src="~/img/ico/products.png" /></a>
+                <div class="holder">
+                    <a class="gl" asp-area="Admin" asp-controller="Home" asp-action="orders">Замовлення</a>
+                </div>
+            </div>
+            <div id="post">
+                <a asp-area="Admin" asp-controller="Home" asp-action="users"><img src="~/img/ico/products.png" /></a>
+                <div class="holder">
+                    <a class="gl" asp-area="Admin" asp-controller="Home" asp-action="users">Користувачі</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>Редагувати сторінки сайта</h3>
+        </div>
+    </main>

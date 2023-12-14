@@ -1,0 +1,9 @@
+﻿@model Product
+<a>Редагувати</a>
+<form style="display: inline-block;" id="form-@Model.id" asp-area="Admin" asp-controller="Products" asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.id" />
+    <a href="#" onclick="document.getElementById('form-@Model.id').submit();">Видалити</a>
+</form>
+<a asp-area="" asp-controller="Products" asp-action="Index" asp-route-id="@Model.id">
+    @($"{ Model.name}")
+</a>

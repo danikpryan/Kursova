@@ -1,0 +1,49 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<center>
+    <div id="glav">Розділи<hr /></div>
+    <div id="categories">
+        <ul class="list-categories">
+            <li class="list-categoryItem">
+                <a asp-area="" asp-controller="Products" asp-action="Products" class="linkGlav">NEW</a>
+            </li>
+            <li class="list-categoryItem">
+                <a href="#" class="linkGlav">Pants</a>
+            </li>
+            <li class="list-categoryItem">
+                <a asp-area="" asp-controller="Shop" asp-action="Products" asp-route-category="tshirts" class="linkGlav">T-Shirts</a>
+            </li>
+            <li class="list-categoryItem">
+                <a href="#" class="linkGlav">Hoodies</a>
+            </li>
+        </ul>
+    </div>
+</center>
+<br />
+<h1>Всі товари</h1>
+
+<!--<main>
+    if (Model.Any())
+    {
+        foreach (Product product in Model)
+        {
+            <div class="content">
+                <div id="post">
+                    <a asp-area="" asp-controller="Shop" asp-action="Show" asp-route-id=".id"><img src="product.img" /></a>
+                    <div class="holder">
+                        product.name
+                        <p>product.price.ToString("c")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</main>-->
+
+<h3>@Model.currCategory</h3>
+<div class="row mt-5 mb-4">
+    @{
+        foreach (Product product in Model.getAllProducts)
+            @Html.Partial("AllProducts", product)
+    }
+</div>
